@@ -5,6 +5,11 @@ agent any
       steps{
        sh '/home/younouss/maven3.6/bin/mvn clean install'
       }
+      post {
+        success {
+            junit 'target/surefire-reports/**/*.xml' 
+        }
+     }
     }
     
     stage("test"){
