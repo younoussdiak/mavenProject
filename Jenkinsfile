@@ -9,7 +9,6 @@ agent any
     
     stage("test"){
       steps{
-         sh 'make check'
          junit 'reports/**/*.xml'
       }
     }
