@@ -9,7 +9,7 @@ agent any
     
     stage("test"){
       steps{
-         junit 'reports/**/*.xml'
+          junit 'target/surefire-reports/**/*.xml'
       }
     }
   }
