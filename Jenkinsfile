@@ -9,7 +9,8 @@ agent any
     
     stage("test"){
       steps{
-        sh '/home/younouss/maven3.6/bin/mvn test'
+         sh 'make check'
+         junit 'reports/**/*.xml'
       }
     }
   }
