@@ -15,7 +15,10 @@ agent any
   }
   parameters { 
     string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-     choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
+    choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
+    text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
+    booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
+    password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     
   }
   
@@ -25,7 +28,7 @@ agent any
        sh '/home/younouss/maven3.6/bin/mvn clean install'
       }
     }
-      stage("varible ENV"){
+      stage("VARIABLES ENV"){
       steps{
        sh 'echo ${color}'
        sh "echo ${env.BRANCH_NAME}"
@@ -35,6 +38,9 @@ agent any
         steps{
            echo "Hello ${params.PERSON}"
            echo "Choice: ${params.CHOICE}"
+           echo "Biography: ${params.BIOGRAPHY}"
+           echo "Toggle: ${params.TOGGLE}"
+           echo "Password: ${params.PASSWORD}"
     
       }
     }
