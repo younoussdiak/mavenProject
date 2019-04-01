@@ -12,8 +12,9 @@ agent any
     stage("Buid"){
       steps{
        sh '/home/younouss/maven3.6/bin/mvn clean install'
-       sh 'echo ${env.BRANCH_NAME}'
        sh 'echo ${color}'
+       sh "echo ${env.BRANCH_NAME}"
+      
       }
      
     }
