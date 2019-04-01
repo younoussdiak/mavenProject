@@ -4,8 +4,14 @@ agent any
     maven 'maven3'
 }
   environment {
-      BRANCH_NAME = 'MESTARISATION'
+      BRANCH_NAME = 'AVIRONNEMT VARIABLE'
        color = "blue"
+  }
+  options { 
+    //Conservez les artefacts et la sortie de la console pour le nombre spécifique d’exécutions récentes du pipeline.
+    buildDiscarder(logRotator(numToKeepStr: '1')) 
+    //Interdit les exécutions simultanées du pipeline (Peut être utile pour empêcher les accès simultanés aux ressources partagées)
+     disableConcurrentBuilds() 
   }
   
   stages{
