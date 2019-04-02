@@ -54,6 +54,7 @@ agent any
    post {
         success {
             junit 'target/surefire-reports/**/*.xml' 
+            mail bcc: '', body: 'SUCCESS', cc: '', from: '', replyTo: '', subject: 'Build failed', to: 'younouss.diakite@gmail.com'
         }
         failure {
             echo 'LE JOB A ECHOUE'
