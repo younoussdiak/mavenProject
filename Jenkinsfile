@@ -12,6 +12,7 @@ agent any
     buildDiscarder(logRotator(numToKeepStr: '3')) 
     //Interdit les exécutions simultanées du pipeline (Peut être utile pour empêcher les accès simultanés aux ressources partagées)
      disableConcurrentBuilds() 
+     timeout(time: 1, unit: 'HOURS')
   }
   parameters { 
     string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
@@ -35,13 +36,17 @@ agent any
       }
     }
       stage("PARAMETTRES"){
+        input {
+            message "afficher les varibles?"
+            ok "Yes"
+            //submitter "alice,bob"
+        }
         steps{
            echo "Hello ${params.PERSON}"
            echo "Choice: ${params.CHOICE}"
            echo "Biography: ${params.BIOGRAPHY}"
            echo "Toggle: ${params.TOGGLE}"
            echo "Password: ${params.PASSWORD}"
-    
       }
     }
   }
