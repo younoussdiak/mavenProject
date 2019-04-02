@@ -47,9 +47,9 @@ agent any
            echo "Biography: ${params.BIOGRAPHY}"
            echo "Toggle: ${params.TOGGLE}"
            echo "Password: ${params.PASSWORD}"
-           mail to: 'younouss.diakite@gmail.com',
-           subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
-           body: "Something is wrong with ${env.BUILD_URL}"
+           //mail to: 'younouss.diakite@gmail.com',
+           //subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+           //body: "Something is wrong with ${env.BUILD_URL}"
       }
     }
   }
@@ -57,7 +57,7 @@ agent any
    post {
         success {
             junit 'target/surefire-reports/**/*.xml' 
-            mail bcc: '', body: 'SUCCESS', cc: '', from: '', replyTo: '', subject: 'Build failed', to: 'younouss.diakite@gmail.com'
+           // mail bcc: '', body: 'SUCCESS', cc: '', from: '', replyTo: '', subject: 'Build failed', to: 'younouss.diakite@gmail.com'
         }
         failure {
             echo 'LE JOB A ECHOUE'
