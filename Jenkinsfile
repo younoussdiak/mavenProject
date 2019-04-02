@@ -47,6 +47,9 @@ agent any
            echo "Biography: ${params.BIOGRAPHY}"
            echo "Toggle: ${params.TOGGLE}"
            echo "Password: ${params.PASSWORD}"
+           mail to: 'younouss.diakite@gmail.com',
+           subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+           body: "Something is wrong with ${env.BUILD_URL}"
       }
     }
   }
