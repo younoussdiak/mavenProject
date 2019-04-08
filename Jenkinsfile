@@ -24,21 +24,21 @@ agent any
   }
   
   stages{
-    stage("Buid"){
+    stage("BUILD"){
       steps{
        sh '/home/younouss/maven3.6/bin/mvn clean install'
       }
     }
-   // stage('Deploy') {
-      //  input {
-         //   message "Do you want to deploy?"
-         //   ok "Yes."
-      //  }
-       // steps {
-        //    echo "Deploying ..."
-         //   sh 'cp jobPipeline_SCM/target/*.jar /home/younouss/RepArtifact'
-       // }
-   // }
+    stage('DEPLOY') {
+        input {
+            message "Do you want to deploy?"
+            ok "Yes."
+        }
+        steps {
+            echo "Deploying ..."
+            sh 'cp target/*.jar /home/younouss/RepArtifact'
+        }
+    }
 
    stage("VARIABLES ENV"){
       steps{
