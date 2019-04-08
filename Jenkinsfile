@@ -40,14 +40,13 @@ agent any
         }
     }
 
-}
-      stage("VARIABLES ENV"){
+   stage("VARIABLES ENV"){
       steps{
        sh 'echo ${color}'
        sh "echo ${env.BRANCH_NAME}"
       }
     }
-      stage("PARAMETTRES"){
+   stage("PARAMETTRES"){
         input {
             message "afficher les varibles?"
             ok "Yes"
