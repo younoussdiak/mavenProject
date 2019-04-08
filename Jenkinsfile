@@ -29,6 +29,18 @@ agent any
        sh '/home/younouss/maven3.6/bin/mvn clean install'
       }
     }
+    stage('Deploy') {
+        input {
+            message "Do you want to deploy?"
+            ok "Yes."
+        }
+        steps {
+            echo "Deploying ..."
+            sh 'cp simple-parent/simple-webapp/target/*.war /home/stage/ArtfactRep'
+        }
+    }
+
+}
       stage("VARIABLES ENV"){
       steps{
        sh 'echo ${color}'
