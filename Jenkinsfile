@@ -36,7 +36,7 @@ agent any
         }
         steps {
             echo "Deploying ..."
-            sh 'cp simple-parent/simple-webapp/target/*.war /home/stage/ArtfactRep'
+            sh 'cp jobPipeline_SCM/target/*.jar /home/younouss/RepArtifact'
         }
     }
 
