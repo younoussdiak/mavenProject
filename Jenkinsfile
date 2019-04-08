@@ -29,6 +29,12 @@ agent any
        sh '/home/younouss/maven3.6/bin/mvn clean install'
       }
     }
+    stage('Publish Result') {
+      steps {  
+        echo 'Testing..'      
+        archiveArtifacts '**/*.war,**/*.jar'
+      }
+    }
     stage('DEPLOY') {
         input {
             message "Do you want to deploy?"
