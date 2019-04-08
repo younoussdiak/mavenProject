@@ -29,6 +29,11 @@ agent any
        sh '/home/younouss/maven3.6/bin/mvn clean install'
       }
     }
+    stage("RELEASE"){
+      steps{
+       sh '/home/younouss/maven3.6/bin/mvn release:prepare'
+      }
+}
     stage('Publish Result') {
       steps {  
         echo 'Testing..'      
