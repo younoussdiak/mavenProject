@@ -26,6 +26,12 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+      <distributionManagement>
+        <repository>
+            <id>artifact-repository</id>
+            <url>your-artifact-repo-url</url>
+        </repository>
+    </distributionManagement>
   <build>
     <plugins>
       <plugin>
