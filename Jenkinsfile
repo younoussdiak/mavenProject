@@ -6,6 +6,8 @@ agent any
   environment {
       BRANCH_NAME = 'AVIRONNEMT VARIABLE'
        color = "blue"
+       username="younoussdiak"
+       password="pho486185"
   }
   options { 
     //Conservez les artefacts et la sortie de la console pour le nombre spécifique d’exécutions récentes du pipeline.
@@ -33,12 +35,12 @@ agent any
       steps{
        //sh '/home/younouss/maven3.6/bin/mvn release:prepare'
        //releasedVersion = getReleasedVersion()
-       withCredentials([usernamePassword(credentialsId: '', passwordVariable: 'pho486185', usernameVariable: 'younoussdiak')]) {
+      // withCredentials([usernamePassword(credentialsId: '', passwordVariable: 'pho486185', usernameVariable: 'younoussdiak')]) {
             sh "git config user.email younouss.diakite@gmail.com && git config user.name Jenkins"
-             sh "mvn release:prepare release:perform -Dusername=${username} -Dpassword=${password}"
-          }
+            sh "mvn release:prepare release:perform -Dusername=${username} -Dpassword=${password}"
+          //}
       }
-}
+    }
     stage('Publish Result') {
       steps {  
         echo 'Testing..'      
