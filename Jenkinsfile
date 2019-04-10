@@ -37,7 +37,7 @@ agent any
        //releasedVersion = getReleasedVersion()
       // withCredentials([usernamePassword(credentialsId: '', passwordVariable: 'pho486185', usernameVariable: 'younoussdiak')]) {
             sh "git config user.email younouss.diakite@gmail.com && git config user.name Jenkins"
-            sh "/home/younouss/maven3.6/bin/mvn release:prepare release:perform -Dusername=${username} -Dpassword=${password}"
+            sh "/home/younouss/maven3.6/bin/mvn release:prepare release:perform" //-Dusername=${username} -Dpassword=${password}"
           //}
       }
     }
