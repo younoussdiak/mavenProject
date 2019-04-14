@@ -37,6 +37,7 @@ agent any
             script { 
                 log.info 'Starting'
                 log.warning 'Nothing to do!'
+               sayHello 'Jack'
             }
         sayHello 'Joe'
         sayHello() 
