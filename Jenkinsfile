@@ -34,8 +34,10 @@ agent any
     }
     stage("RELEASE"){
       steps{
-        log.info 'Starting'
-        log.warning 'Nothing to do!'
+            script { 
+                log.info 'Starting'
+                log.warning 'Nothing to do!'
+            }
        //sh '/home/younouss/maven3.6/bin/mvn release:prepare'
        //releasedVersion = getReleasedVersion()
       // withCredentials([usernamePassword(credentialsId: '', passwordVariable: 'pho486185', usernameVariable: 'younoussdiak')]) {
