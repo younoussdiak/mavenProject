@@ -39,6 +39,7 @@ agent any
                 log.warning 'Nothing to do!'
                sayHello 'Jack'
             }
+         log.info 'YES WE CAN'
         sayHello 'Joe'
         sayHello() 
        //sh '/home/younouss/maven3.6/bin/mvn release:prepare'
