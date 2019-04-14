@@ -38,6 +38,8 @@ agent any
                 log.info 'Starting'
                 log.warning 'Nothing to do!'
             }
+        sayHello 'Joe'
+        sayHello() 
        //sh '/home/younouss/maven3.6/bin/mvn release:prepare'
        //releasedVersion = getReleasedVersion()
       // withCredentials([usernamePassword(credentialsId: '', passwordVariable: 'pho486185', usernameVariable: 'younoussdiak')]) {
